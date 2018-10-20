@@ -1,6 +1,7 @@
 {
   "tslint.alwaysShowRuleFailuresAsWarnings": true,
   "tslint.alwaysShowStatus": true,
+  "tslint.autoFixOnSave": true,
   "files.exclude": {
     "**/node_modules": true,
     "src/**/*.js": true,
