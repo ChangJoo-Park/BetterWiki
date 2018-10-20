@@ -1,0 +1,9 @@
+{
+  "tslint.alwaysShowRuleFailuresAsWarnings": true,
+  "tslint.alwaysShowStatus": true,
+  "files.exclude": {
+    "**/node_modules": true,
+    "src/**/*.js": true,
+    "src/**/*.js.map": true
+  }
+}
