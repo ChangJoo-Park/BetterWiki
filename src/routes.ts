@@ -2,6 +2,7 @@ import { articleCreateAction } from "./controller/articleCreateAction";
 import { articleDeleteAllAction } from "./controller/articleDeleteAllAction";
 import { articleGetAction } from "./controller/articleGetAction";
 import { articleGetAllAction } from "./controller/articleGetAllAction";
+import { articleUpdateAction } from "./controller/articleUpdateAction";
 import { topicArticlesGetAction } from "./controller/topicArticlesGetAction";
 import { topicCreateAction } from "./controller/topicCreateAction";
 import { topicGetAllAction } from "./controller/topicGetAllAction";
@@ -24,6 +25,11 @@ export const AppRoutes = [
     {
         action: articleGetAction,
         method: "get",
+        path: "/articles/:id",
+    },
+    {
+        action: articleUpdateAction,
+        method: "patch",
         path: "/articles/:id",
     },
     {

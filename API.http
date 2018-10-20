@@ -36,3 +36,15 @@ GET http://localhost:3000/topics/9687df87-ef5f-47c0-938e-922b711a0038/articles H
 # ADMIN ONLY
 ###
 DELETE http://localhost:3000/articles HTTP/1.1
+
+
+# Update Article - TODO: Check create archive
+###
+PATCH http://localhost:3000/articles/4f64d0d7-c85d-446f-aa68-af7744b7a178 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "[Patch] New Title",
+  "body": "[Patch] New Body"
+}
