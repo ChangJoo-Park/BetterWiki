@@ -1,4 +1,5 @@
-import { BaseEntity, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { BaseEntity, Column, CreateDateColumn, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Article } from "./Article";
 
 @Entity()
 export class Topic extends BaseEntity {
@@ -7,10 +8,13 @@ export class Topic extends BaseEntity {
   public id: string;
 
   @Column()
-  public title: string;
+  public name: string;
 
   @Column()
-  public body: string;
+  public description: string;
+
+  @OneToMany((type) => Article, (article) => article.topic)
+  public articles: Article[];
 
   @CreateDateColumn({ name: "createdAt", precision: 3 })
   public readonly createdAt?: Date;

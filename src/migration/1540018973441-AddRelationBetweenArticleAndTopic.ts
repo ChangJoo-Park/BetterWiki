@@ -5,13 +5,13 @@ export class AddRelationBetweenArticleAndTopic1540018973441 implements Migration
     public async up(queryRunner: QueryRunner): Promise<any> {
         return queryRunner.addColumn("article", new TableColumn({
             isNullable: true,
-            name: "topic_id",
+            name: "topicId",
             type: "VARCHAR",
         }));
     }
 
     public async down(queryRunner: QueryRunner): Promise<any> {
-        return queryRunner.dropColumn("article", "topic_id");
+        return queryRunner.dropColumn("article", "topicId");
     }
 
 }
