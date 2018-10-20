@@ -18,10 +18,13 @@ export async function articleUpdateAction(request: Request, response: Response) 
 
   // FIXME: 아래의 Archive를 만드는 내용은 여기서 하지 말아야함. Subscriber 오류 수정 후 변경할 것
   // issue : https://github.com/typeorm/typeorm/issues/2809
-  if (oldArticle.title !== title || oldArticle.body !== body) {
+  const titleChanged = oldArticle.title !== title;
+  const bodyChanged = oldArticle.body !== body;
+  const reallyChanged = titleChanged || bodyChanged;
+  if (reallyChanged) {
     let message = "";
-    message += oldArticle.title !== title ? "- Title changed\n" : "";
-    message += oldArticle.body !== body ? "- Body changed\n" : "";
+    message += titleChanged ? "- Title changed\n" : "";
+    message += bodyChanged ? "- Body changed\n" : "";
 
     await Archive
       .create({
