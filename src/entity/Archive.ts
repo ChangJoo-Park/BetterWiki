@@ -1,4 +1,5 @@
-import { BaseEntity, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { BaseEntity, Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Article } from "./Article";
 
 @Entity()
 export class Archive extends BaseEntity {
@@ -15,6 +16,9 @@ export class Archive extends BaseEntity {
 
   @Column()
   public whatChanged: string;
+
+  @ManyToOne((type) => Article, (article) => article.archives)
+  public article: Article;
 
   @CreateDateColumn({ name: "createdAt", precision: 3 })
   public readonly createdAt?: Date;
