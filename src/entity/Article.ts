@@ -15,9 +15,6 @@ export class Article extends BaseEntity {
   @Column("text")
   public body: string;
 
-  @Column("uuid")
-  public topicId: string;
-
   @ManyToOne((type) => Topic, (topic) => topic.articles)
   public topic: Topic;
 
