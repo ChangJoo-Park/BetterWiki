@@ -12,6 +12,9 @@ export class Article extends BaseEntity {
   @Column("text")
   public body: string;
 
+  @Column("uuid", { name: "topic_id" })
+  public topicId: string;
+
   @CreateDateColumn({ name: "createdAt", precision: 3 })
   public readonly createdAt?: Date;
 
