@@ -6,6 +6,14 @@ import { Topic } from "./Topic";
 @Entity()
 export class Article extends BaseEntity {
 
+  public static findOneWithDetails(id) {
+    return this.findOne(id, {
+      loadRelationIds: true,
+      relations: ["topic"],
+      select: ["title", "body", "createdAt", "updatedAt", "topic"],
+    });
+  }
+
   @PrimaryGeneratedColumn("uuid")
   public id: string;
 
