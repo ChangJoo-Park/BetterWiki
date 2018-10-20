@@ -12,7 +12,9 @@ export class Article extends BaseEntity {
   @Column()
   public title: string;
 
-  @Column("text")
+  @Column("text", {
+    select: false,
+  })
   public body: string;
 
   @ManyToOne((type) => Topic, (topic) => topic.articles)
