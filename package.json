@@ -25,13 +25,16 @@
   ],
   "devDependencies": {
     "@types/body-parser": "^1.17.0",
-    "@types/express": "^4.16.0",
-    "@types/node": "^8.0.29",
     "@types/dotenv": "^4.0.3",
+    "@types/express": "^4.16.0",
     "@types/jest": "^23.3.5",
     "@types/morgan": "^1.7.35",
-    "winston": "^3.1.0",
-    "typescript": "^2.8.1"
+    "@types/node": "^8.0.29",
+    "concurrently": "^4.0.1",
+    "nodemon": "^1.18.4",
+    "rimraf": "^2.6.2",
+    "typescript": "^2.8.1",
+    "winston": "^3.1.0"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
@@ -49,7 +52,8 @@
     "sqlite3": "^4.0.0"
   },
   "scripts": {
-    "start": "tsc && node src/index.js",
+    "clear": "rimraf ./dist",
+    "start": "npm run clear && tsc && concurrently --kill-others \"tsc -w\" \"nodemon --delay 500ms dist/index.js\"",
     "lint": "tslint src/**/*.ts -t verbose --fix",
     "db:migration:run": "tsc && typeorm migration:run"
   }
