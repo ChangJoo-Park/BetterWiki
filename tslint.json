@@ -4,7 +4,15 @@
         "tslint:recommended"
     ],
     "jsRules": {},
-    "rules": {},
+    "rules": {
+        "max-line-length": [
+            true,
+            {
+                "limit": 120,
+                "ignore-pattern": "^import |^export {(.*?)}"
+            }
+        ]
+    },
     "rulesDirectory": [],
     "linterOptions": {
         "exclude": [
