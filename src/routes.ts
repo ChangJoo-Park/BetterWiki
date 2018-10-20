@@ -1,6 +1,8 @@
 import { articleCreateAction } from "./controller/articleCreateAction";
+import { articleDeleteAllAction } from "./controller/articleDeleteAllAction";
 import { articleGetAction } from "./controller/articleGetAction";
 import { articleGetAllAction } from "./controller/articleGetAllAction";
+import { topicArticlesGetAction } from "./controller/topicArticlesGetAction";
 import { topicCreateAction } from "./controller/topicCreateAction";
 import { topicGetAllAction } from "./controller/topicGetAllAction";
 
@@ -8,6 +10,12 @@ import { topicGetAllAction } from "./controller/topicGetAllAction";
  * All application routes.
  */
 export const AppRoutes = [
+    // Admin Only
+    {
+        action: articleDeleteAllAction,
+        method: "delete",
+        path: "/articles",
+    },
     {
         action: articleGetAllAction,
         method: "get",
@@ -27,6 +35,11 @@ export const AppRoutes = [
         action: topicGetAllAction,
         method: "get",
         path: "/topics",
+    },
+    {
+        action: topicArticlesGetAction,
+        method: "get",
+        path: "/topics/:id/articles",
     },
     {
         action: topicCreateAction,
