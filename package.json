@@ -10,10 +10,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/typeorm/typescript-express-example.git"
+    "url": "https://github.com/changjoo-park/BetterWiki.git"
   },
   "bugs": {
-    "url": "https://github.com/typeorm/typescript-express-example/issues"
+    "url": "https://github.com/changjoo-park/BetterWiki/issues"
   },
   "tags": [
     "orm",
