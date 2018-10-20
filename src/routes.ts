@@ -2,6 +2,7 @@ import { articleCreateAction } from "./controller/articleCreateAction";
 import { articleDeleteAllAction } from "./controller/articleDeleteAllAction";
 import { articleGetAction } from "./controller/articleGetAction";
 import { articleGetAllAction } from "./controller/articleGetAllAction";
+import { articleHistoryGetAllAction } from "./controller/articleHistoryGetAllAction";
 import { articleUpdateAction } from "./controller/articleUpdateAction";
 import { topicArticlesGetAction } from "./controller/topicArticlesGetAction";
 import { topicCreateAction } from "./controller/topicCreateAction";
@@ -26,6 +27,11 @@ export const AppRoutes = [
         action: articleGetAction,
         method: "get",
         path: "/articles/:id",
+    },
+    {
+        action: articleHistoryGetAllAction,
+        method: "get",
+        path: "/articles/:id/history",
     },
     {
         action: articleUpdateAction,
