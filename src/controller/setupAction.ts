@@ -33,5 +33,6 @@ export async function setupAction(request: Request, response: Response) {
 
   return response.json({
     admin: savedUser,
+    service: savedService,
   });
 }
