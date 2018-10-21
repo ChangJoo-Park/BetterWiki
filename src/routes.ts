@@ -6,6 +6,7 @@ import { articleHistoryGetAllAction } from "./controller/articleHistoryGetAllAct
 import { articleUpdateAction } from "./controller/articleUpdateAction";
 import { authAction } from "./controller/authAction";
 import { meGetAction } from "./controller/meGetAction";
+import { setupAction } from "./controller/setupAction";
 import { topicArticlesGetAction } from "./controller/topicArticlesGetAction";
 import { topicCreateAction } from "./controller/topicCreateAction";
 import { topicGetAllAction } from "./controller/topicGetAllAction";
@@ -19,12 +20,20 @@ export const AppRoutes = [
     {
         action: authAction,
         method: "post",
+        needAuth: false,
         path: "/login",
     },
     {
         action: userSignUpAction,
         method: "post",
+        needAuth: false,
         path: "/signup",
+    },
+    {
+        action: setupAction,
+        method: "post",
+        needAuth: false,
+        path: "/setup",
     },
     {
         action: meGetAction,
@@ -32,50 +41,58 @@ export const AppRoutes = [
         needAuth: true,
         path: "/me",
     },
-    // Admin Only
     {
         action: articleDeleteAllAction,
         method: "delete",
+        needAuth: true,
         path: "/articles",
     },
     {
         action: articleGetAllAction,
         method: "get",
+        needAuth: true,
         path: "/articles",
     },
     {
         action: articleGetAction,
         method: "get",
+        needAuth: true,
         path: "/articles/:id",
     },
     {
         action: articleHistoryGetAllAction,
         method: "get",
+        needAuth: true,
         path: "/articles/:id/history",
     },
     {
         action: articleUpdateAction,
         method: "patch",
+        needAuth: true,
         path: "/articles/:id",
     },
     {
         action: articleCreateAction,
         method: "post",
+        needAuth: true,
         path: "/articles",
     },
     {
         action: topicGetAllAction,
         method: "get",
+        needAuth: true,
         path: "/topics",
     },
     {
         action: topicArticlesGetAction,
         method: "get",
+        needAuth: true,
         path: "/topics/:id/articles",
     },
     {
         action: topicCreateAction,
         method: "post",
+        needAuth: true,
         path: "/topics",
     },
 ];
