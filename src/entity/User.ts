@@ -1,5 +1,7 @@
-import { BaseEntity, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { BaseEntity, Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { articleCreateAction } from "../controller/articleCreateAction";
 import { UserRole } from "../enum/UserRole";
+import { Article } from "./Article";
 
 @Entity()
 export class User extends BaseEntity {
@@ -23,6 +25,9 @@ export class User extends BaseEntity {
 
   @Column({ enum: UserRole, default: UserRole.NotAMember })
   public role: UserRole;
+
+  @OneToMany((type) => Article, (article) => article.user)
+  public articles: Article[];
 
   @CreateDateColumn({ name: "createdAt", precision: 3 })
   public readonly createdAt?: Date;

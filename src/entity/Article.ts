@@ -3,6 +3,7 @@ import {
 } from "typeorm";
 import { Archive } from "./Archive";
 import { Topic } from "./Topic";
+import { User } from "./User";
 
 @Entity()
 export class Article extends BaseEntity {
@@ -29,6 +30,9 @@ export class Article extends BaseEntity {
 
   @ManyToOne((type) => Topic, (topic) => topic.articles)
   public topic: Topic;
+
+  @ManyToOne((type) => User, (user) => user.articles)
+  public user: User;
 
   @OneToMany((type) => Archive, (archive) => archive.article)
   public archives: Archive[];
