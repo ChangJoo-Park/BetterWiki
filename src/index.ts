@@ -4,6 +4,7 @@ import * as express from "express";
 import { NextFunction } from "express-serve-static-core";
 import "reflect-metadata";
 import { createConnection } from "typeorm";
+import "./authentication/passport";
 import { AppRoutes } from "./routes";
 
 createConnection().then(async (connection) => {
@@ -18,5 +19,7 @@ createConnection().then(async (connection) => {
         });
     });
 
-    app.listen(3000);
+    app.listen(3000, () => {
+        console.log("Server Started on 3000");
+    });
 });
