@@ -6,6 +6,7 @@ import { articleHistoryGetAllAction } from "./controller/articleHistoryGetAllAct
 import { articleUpdateAction } from "./controller/articleUpdateAction";
 import { authAction } from "./controller/authAction";
 import { meGetAction } from "./controller/meGetAction";
+import { serviceUpdateAction } from "./controller/serviceUpdateAction";
 import { setupAction } from "./controller/setupAction";
 import { setupCheckAction } from "./controller/setupCheckAction";
 import { topicArticlesGetAction } from "./controller/topicArticlesGetAction";
@@ -17,6 +18,19 @@ import { userSignUpAction } from "./controller/userSignUpAction";
  * All application routes.
  */
 export const AppRoutes = [
+    // Service
+    {
+        action: setupAction,
+        method: "post",
+        needAuth: false,
+        path: "/setup",
+    },
+    {
+        action: serviceUpdateAction,
+        method: "put",
+        needAuth: true,
+        path: "/setting",
+    },
     // User and Authentication
     {
         action: authAction,
@@ -35,12 +49,6 @@ export const AppRoutes = [
         method: "get",
         needAuth: false,
         path: "/setup/check",
-    },
-    {
-        action: setupAction,
-        method: "post",
-        needAuth: false,
-        path: "/setup",
     },
     {
         action: meGetAction,
