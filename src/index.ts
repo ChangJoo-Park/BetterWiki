@@ -22,9 +22,12 @@ createConnection().then(async (connection) => {
                 },
             );
         } else {
-            app[route.method](route.path, (request: Request, response: Response, next: NextFunction) => {
-                return route.action(request, response).catch((error) => next(error));
-            });
+            app[route.method](
+                route.path,
+                (request: Request, response: Response, next: NextFunction) => {
+                    return route.action(request, response).catch((error) => next(error));
+                },
+            );
         }
     });
 
