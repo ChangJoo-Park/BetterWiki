@@ -2,6 +2,12 @@ import { BaseEntity, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, U
 
 @Entity()
 export class Service extends BaseEntity {
+  public static findOneWithDetails() {
+    return Service.findOne({
+      select: ["id", "name", "description", "logo", "createdAt", "updatedAt"],
+    });
+  }
+
   @PrimaryGeneratedColumn("uuid")
   public id: string;
 
