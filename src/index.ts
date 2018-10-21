@@ -2,6 +2,7 @@ import * as bodyParser from "body-parser";
 import { Request, Response } from "express";
 import * as express from "express";
 import { NextFunction } from "express-serve-static-core";
+import * as logger from "morgan";
 import "reflect-metadata";
 import { createConnection } from "typeorm";
 import "./authentication/passport";
@@ -11,6 +12,7 @@ import { AppRoutes } from "./routes";
 createConnection().then(async (connection) => {
     const app = express();
     app.use(bodyParser.json());
+    app.use(logger("dev"));
 
     AppRoutes.forEach((route) => {
         if (route.needAuth) {
