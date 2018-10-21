@@ -66,7 +66,7 @@ Accept: application/json
 
 {
   "email": "pcjpcj2@gmail.com",
-  "password": "mypassowrd"
+  "password": "password"
 }
 
 ###
@@ -76,6 +76,7 @@ Accept: application/json
 
 {
   "email": "pcjpcj2@gmail.com",
+  "username": "changjoo-park",
   "password": "mypassowrd"
 }
 
@@ -86,5 +87,40 @@ Authorization:bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjcwODA3YWQyLW
 
 ###
 GET http://localhost:3000/setup/check HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+
+###
+POST http://localhost:3000/setup HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "user": {
+    "email": "pcjpcj2@gmail.com",
+    "password": "password",
+    "username": "changjoo-park"
+  },
+  "service": {
+    "name": "BetterWiki",
+    "description": "This is My wikiwiki"
+  }
+}
+
+
+###
+GET http://localhost:3000/service HTTP/1.1
+Authorization:bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5ODllNDhiLTNjNjktNGE2Yi04NzgzLTU5YzhkNWIxYzM5YyIsImVtYWlsIjoicGNqcGNqMkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImNoYW5nam9vLXBhcmsiLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDE4LTEwLTIxVDExOjU4OjI2LjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDE4LTEwLTIxVDExOjU4OjI2LjAwMFoiLCJpYXQiOjE1NDAxMjg1MDV9.E4-l3YcLeSq3DWIbJGxSAxMu1STnw-T8WhXE2Pi72j8
+
+###
+GET http://localhost:3000/users HTTP/1.1
+Authorization:bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5ODllNDhiLTNjNjktNGE2Yi04NzgzLTU5YzhkNWIxYzM5YyIsImVtYWlsIjoicGNqcGNqMkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImNoYW5nam9vLXBhcmsiLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDE4LTEwLTIxVDExOjU4OjI2LjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDE4LTEwLTIxVDExOjU4OjI2LjAwMFoiLCJpYXQiOjE1NDAxMjg1MDV9.E4-l3YcLeSq3DWIbJGxSAxMu1STnw-T8WhXE2Pi72j8
+Content-Type: application/json
+Accept: application/json
+
+###
+GET http://localhost:3000/users/2989e48b-3c69-4a6b-8783-59c8d5b1c39c HTTP/1.1
+Authorization:bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5ODllNDhiLTNjNjktNGE2Yi04NzgzLTU5YzhkNWIxYzM5YyIsImVtYWlsIjoicGNqcGNqMkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImNoYW5nam9vLXBhcmsiLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDE4LTEwLTIxVDExOjU4OjI2LjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDE4LTEwLTIxVDExOjU4OjI2LjAwMFoiLCJpYXQiOjE1NDAxMjg1MDV9.E4-l3YcLeSq3DWIbJGxSAxMu1STnw-T8WhXE2Pi72j8
 Content-Type: application/json
 Accept: application/json

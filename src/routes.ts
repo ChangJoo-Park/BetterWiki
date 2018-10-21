@@ -13,6 +13,8 @@ import { setupCheckAction } from "./controller/setupCheckAction";
 import { topicArticlesGetAction } from "./controller/topicArticlesGetAction";
 import { topicCreateAction } from "./controller/topicCreateAction";
 import { topicGetAllAction } from "./controller/topicGetAllAction";
+import { userGetAction } from "./controller/userGetAction";
+import { userGetAllAction } from "./controller/userGetAllAction";
 import { userSignUpAction } from "./controller/userSignUpAction";
 
 /**
@@ -36,6 +38,7 @@ export const AppRoutes = [
         action: serviceUpdateAction,
         method: "put",
         needAuth: true,
+        onlyAdmin: true,
         path: "/setting",
     },
     // User and Authentication
@@ -48,8 +51,20 @@ export const AppRoutes = [
     {
         action: userSignUpAction,
         method: "post",
-        needAuth: false,
-        path: "/signup",
+        needAuth: true,
+        path: "/users",
+    },
+    {
+        action: userGetAction,
+        method: "get",
+        needAuth: true,
+        path: "/users/:id",
+    },
+    {
+        action: userGetAllAction,
+        method: "get",
+        needAuth: true,
+        path: "/users",
     },
     {
         action: setupCheckAction,
