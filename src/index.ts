@@ -23,7 +23,7 @@ createConnection().then(async (connection) => {
                     passport.authenticate("jwt", { session: false }),
                     onlyAdmin,
                     (request: Request, response: Response, next: NextFunction) => {
-                        return route.action(request, response).catch((error) => next(error)); ,
+                        return route.action(request, response).catch((error) => next(error));
                     },
                 );
             } else {
