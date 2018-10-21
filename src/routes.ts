@@ -4,6 +4,7 @@ import { articleGetAction } from "./controller/articleGetAction";
 import { articleGetAllAction } from "./controller/articleGetAllAction";
 import { articleHistoryGetAllAction } from "./controller/articleHistoryGetAllAction";
 import { articleUpdateAction } from "./controller/articleUpdateAction";
+import { authAction } from "./controller/authAction";
 import { topicArticlesGetAction } from "./controller/topicArticlesGetAction";
 import { topicCreateAction } from "./controller/topicCreateAction";
 import { topicGetAllAction } from "./controller/topicGetAllAction";
@@ -12,6 +13,12 @@ import { topicGetAllAction } from "./controller/topicGetAllAction";
  * All application routes.
  */
 export const AppRoutes = [
+    // User and Authentication
+    {
+        action: authAction,
+        method: "post",
+        path: "/login",
+    },
     // Admin Only
     {
         action: articleDeleteAllAction,
