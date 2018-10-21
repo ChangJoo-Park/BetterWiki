@@ -13,11 +13,19 @@ createConnection().then(async (connection) => {
     app.use(bodyParser.json());
 
     AppRoutes.forEach((route) => {
-        app[route.method](route.path, (request: Request, response: Response, next: NextFunction) => {
-            route.action(request, response)
-                .then(() => next)
-                .catch((err) => next(err));
-        });
+        if (route.needAuth) {
+            app[route.method](
+                route.path,
+                passport.authenticate("jwt", { session: false }),
+                (request: Request, response: Response, next: NextFunction) => {
+                    return route.action(request, response).catch((error) => next(error));
+                },
+            );
+        } else {
+            app[route.method](route.path, (request: Request, response: Response, next: NextFunction) => {
+                return route.action(request, response).catch((error) => next(error));
+            });
+        }
     });
 
     app.listen(3000, () => {
