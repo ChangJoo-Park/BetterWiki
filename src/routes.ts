@@ -5,6 +5,7 @@ import { articleGetAllAction } from "./controller/articleGetAllAction";
 import { articleHistoryGetAllAction } from "./controller/articleHistoryGetAllAction";
 import { articleUpdateAction } from "./controller/articleUpdateAction";
 import { authAction } from "./controller/authAction";
+import { meGetAction } from "./controller/meGetAction";
 import { topicArticlesGetAction } from "./controller/topicArticlesGetAction";
 import { topicCreateAction } from "./controller/topicCreateAction";
 import { topicGetAllAction } from "./controller/topicGetAllAction";
@@ -24,6 +25,12 @@ export const AppRoutes = [
         action: userSignUpAction,
         method: "post",
         path: "/signup",
+    },
+    {
+        action: meGetAction,
+        method: "get",
+        needAuth: true,
+        path: "/me",
     },
     // Admin Only
     {
