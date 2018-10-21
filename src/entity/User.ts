@@ -1,4 +1,5 @@
 import { BaseEntity, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { UserRole } from "../enum/UserRole";
 
 @Entity()
 export class User extends BaseEntity {
@@ -10,6 +11,18 @@ export class User extends BaseEntity {
 
   @Column({ select: false })
   public passwordDigest: string;
+
+  @Column()
+  public username: string;
+
+  @Column({ select: false })
+  public about: string;
+
+  @Column({ select: false })
+  public avatar: string;
+
+  @Column({ enum: UserRole, default: UserRole.NotAMember })
+  public role: UserRole;
 
   @CreateDateColumn({ name: "createdAt", precision: 3 })
   public readonly createdAt?: Date;
