@@ -19,7 +19,7 @@ export async function authAction(request: Request, response: Response) {
         { session: false },
         (loginError) => {
           if (loginError) {
-            response.send(loginError);
+            return response.send(loginError);
           }
 
           const token = JWT.sign(user, "MY_APP_JWT_SECRET");
