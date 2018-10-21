@@ -9,8 +9,8 @@ import { User } from "./User";
 export class Article extends BaseEntity {
 
   public static findOneWithDetails(id) {
-    const select: any = ["title", "body", "createdAt", "updatedAt", "topic"];
-    const relations: any = ["topic"];
+    const select: any = ["title", "body", "createdAt", "updatedAt", "topic", "user"];
+    const relations: any = ["topic", "user"];
 
     return this.findOne(id, {
       loadRelationIds: true,
