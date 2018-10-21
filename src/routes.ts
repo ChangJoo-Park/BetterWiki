@@ -8,6 +8,7 @@ import { authAction } from "./controller/authAction";
 import { topicArticlesGetAction } from "./controller/topicArticlesGetAction";
 import { topicCreateAction } from "./controller/topicCreateAction";
 import { topicGetAllAction } from "./controller/topicGetAllAction";
+import { userSignUpAction } from "./controller/userSignUpAction";
 
 /**
  * All application routes.
@@ -18,6 +19,11 @@ export const AppRoutes = [
         action: authAction,
         method: "post",
         path: "/login",
+    },
+    {
+        action: userSignUpAction,
+        method: "post",
+        path: "/signup",
     },
     // Admin Only
     {
