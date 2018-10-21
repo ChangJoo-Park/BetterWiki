@@ -1,34 +1,42 @@
 ###
 GET http://localhost:3000/articles HTTP/1.1
+Authorization:bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5ODllNDhiLTNjNjktNGE2Yi04NzgzLTU5YzhkNWIxYzM5YyIsImVtYWlsIjoicGNqcGNqMkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImNoYW5nam9vLXBhcmsiLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDE4LTEwLTIxVDExOjU4OjI2LjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDE4LTEwLTIxVDExOjU4OjI2LjAwMFoiLCJpYXQiOjE1NDAxMjg1MDV9.E4-l3YcLeSq3DWIbJGxSAxMu1STnw-T8WhXE2Pi72j8
+Content-Type: application/json
+Accept: application/json
 
 ###
-GET http://localhost:3000/articles/4f64d0d7-c85d-446f-aa68-af7744b7a178 HTTP/1.1
+GET http://localhost:3000/articles/9e112f5c-863f-497e-a20f-e42da7aec95b HTTP/1.1
+Authorization:bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5ODllNDhiLTNjNjktNGE2Yi04NzgzLTU5YzhkNWIxYzM5YyIsImVtYWlsIjoicGNqcGNqMkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImNoYW5nam9vLXBhcmsiLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDE4LTEwLTIxVDExOjU4OjI2LjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDE4LTEwLTIxVDExOjU4OjI2LjAwMFoiLCJpYXQiOjE1NDAxMjg1MDV9.E4-l3YcLeSq3DWIbJGxSAxMu1STnw-T8WhXE2Pi72j8
+Content-Type: application/json
+Accept: application/json
 
 
 ###
 POST http://localhost:3000/articles HTTP/1.1
+Authorization:bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5ODllNDhiLTNjNjktNGE2Yi04NzgzLTU5YzhkNWIxYzM5YyIsImVtYWlsIjoicGNqcGNqMkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImNoYW5nam9vLXBhcmsiLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDE4LTEwLTIxVDExOjU4OjI2LjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDE4LTEwLTIxVDExOjU4OjI2LjAwMFoiLCJpYXQiOjE1NDAxMjg1MDV9.E4-l3YcLeSq3DWIbJGxSAxMu1STnw-T8WhXE2Pi72j8
 Content-Type: application/json
 Accept: application/json
 
 {
-  "title": "Second related article",
-  "body": "Lorem Ipsum aasdfasdfasdfa",
-  "topicId": "9687df87-ef5f-47c0-938e-922b711a0038"
+  "title": "Microsoft",
+  "body": "testing",
+  "topicId": "42397897-942e-4aa0-8c5e-55fb7dc0d5e6"
 }
 
 ###
 POST http://localhost:3000/topics HTTP/1.1
+Authorization:bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5ODllNDhiLTNjNjktNGE2Yi04NzgzLTU5YzhkNWIxYzM5YyIsImVtYWlsIjoicGNqcGNqMkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImNoYW5nam9vLXBhcmsiLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDE4LTEwLTIxVDExOjU4OjI2LjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDE4LTEwLTIxVDExOjU4OjI2LjAwMFoiLCJpYXQiOjE1NDAxMjg1MDV9.E4-l3YcLeSq3DWIbJGxSAxMu1STnw-T8WhXE2Pi72j8
 Content-Type: application/json
 Accept: application/json
 
 {
-  "name": "FirstTopic",
-  "description": "This is first Topic"
+  "name": "Accounts",
+  "description": "save for accounts"
 }
 
 ###
 GET http://localhost:3000/topics HTTP/1.1
-
+Authorization:bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5ODllNDhiLTNjNjktNGE2Yi04NzgzLTU5YzhkNWIxYzM5YyIsImVtYWlsIjoicGNqcGNqMkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImNoYW5nam9vLXBhcmsiLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDE4LTEwLTIxVDExOjU4OjI2LjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDE4LTEwLTIxVDExOjU4OjI2LjAwMFoiLCJpYXQiOjE1NDAxMjg1MDV9.E4-l3YcLeSq3DWIbJGxSAxMu1STnw-T8WhXE2Pi72j8
 ###
 GET http://localhost:3000/topics/9687df87-ef5f-47c0-938e-922b711a0038/articles HTTP/1.1
 
