@@ -78,3 +78,7 @@ Accept: application/json
   "email": "pcjpcj2@gmail.com",
   "password": "mypassowrd"
 }
+
+###
+GET http://localhost:3000/me HTTP/1.1
+Authorization:bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjcwODA3YWQyLWVkOTYtNDJiYy04ODM0LTA5ZjA4NWQ1NmYzOCIsImVtYWlsIjoicGNqcGNqMkBnbWFpbC5jb20iLCJjcmVhdGVkQXQiOiIyMDE4LTEwLTIxVDA2OjI0OjA4LjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDE4LTEwLTIxVDA2OjI0OjA4LjAwMFoiLCJpYXQiOjE1NDAxMDQ4OTd9.uyO5hJRon4bX5hLeR-OUyyNQ23qD7uUKoi3TYN8AI40
