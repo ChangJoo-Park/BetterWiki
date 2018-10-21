@@ -15,10 +15,10 @@ export class User extends BaseEntity {
   @Column()
   public username: string;
 
-  @Column({ select: false })
+  @Column({ select: false, default: "" })
   public about: string;
 
-  @Column({ select: false })
+  @Column({ select: false, default: "" })
   public avatar: string;
 
   @Column({ enum: UserRole, default: UserRole.NotAMember })
