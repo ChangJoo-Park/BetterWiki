@@ -7,6 +7,7 @@ import { articleUpdateAction } from "./controller/articleUpdateAction";
 import { authAction } from "./controller/authAction";
 import { meGetAction } from "./controller/meGetAction";
 import { serviceUpdateAction } from "./controller/serviceUpdateAction";
+import { serviceGetAction } from "./controller/servieGetAction";
 import { setupAction } from "./controller/setupAction";
 import { setupCheckAction } from "./controller/setupCheckAction";
 import { topicArticlesGetAction } from "./controller/topicArticlesGetAction";
@@ -24,6 +25,12 @@ export const AppRoutes = [
         method: "post",
         needAuth: false,
         path: "/setup",
+    },
+    {
+        action: serviceGetAction,
+        method: "get",
+        needAuth: true,
+        path: "/service",
     },
     {
         action: serviceUpdateAction,
