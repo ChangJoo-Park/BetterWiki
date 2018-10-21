@@ -5,6 +5,7 @@ import { NextFunction } from "express-serve-static-core";
 import "reflect-metadata";
 import { createConnection } from "typeorm";
 import "./authentication/passport";
+import { passport } from "./authentication/passport";
 import { AppRoutes } from "./routes";
 
 createConnection().then(async (connection) => {
