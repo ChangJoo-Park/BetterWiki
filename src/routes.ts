@@ -10,8 +10,11 @@ import { serviceUpdateAction } from "./controller/serviceUpdateAction";
 import { serviceGetAction } from "./controller/servieGetAction";
 import { setupAction } from "./controller/setupAction";
 import { setupCheckAction } from "./controller/setupCheckAction";
+import { topicArticleConnectAction } from "./controller/topicArticleConnectAction";
+import { topicArticleDisconnectAction } from "./controller/topicArticleDisconnect";
 import { topicArticlesGetAction } from "./controller/topicArticlesGetAction";
 import { topicCreateAction } from "./controller/topicCreateAction";
+import { topicDeleteAction } from "./controller/topicDeleteAction";
 import { topicGetAllAction } from "./controller/topicGetAllAction";
 import { userGetAction } from "./controller/userGetAction";
 import { userGetAllAction } from "./controller/userGetAllAction";
@@ -133,5 +136,24 @@ export const AppRoutes = [
         method: "post",
         needAuth: true,
         path: "/topics",
+    },
+    {
+        action: topicDeleteAction,
+        method: "delete",
+        needAuth: true,
+        onlyAdmin: true,
+        path: "/topics",
+    },
+    {
+        action: topicArticleConnectAction,
+        method: "patch",
+        needAuth: true,
+        path: "/topics/:topicId/articles/:articleId/connect",
+    },
+    {
+        action: topicArticleDisconnectAction,
+        method: "delete",
+        needAuth: true,
+        path: "/topics/:topicId/articles/:articleId/disconnect",
     },
 ];
