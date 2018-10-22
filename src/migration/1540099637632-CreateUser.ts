@@ -13,6 +13,7 @@ export class CreateUser1540099637632 implements MigrationInterface {
 
                 new TableColumn({
                     isNullable: false,
+                    isUnique: true,
                     name: "email",
                     type: "VARCHAR",
                 }),

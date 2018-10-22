@@ -6,6 +6,7 @@ export class AddMetaToUser1540118050131 implements MigrationInterface {
     public async up(queryRunner: QueryRunner): Promise<any> {
         return queryRunner.addColumns("user", [
             new TableColumn({
+                isUnique: true,
                 name: "username",
                 type: "VARCHAR",
             }),
