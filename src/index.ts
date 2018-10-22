@@ -1,6 +1,9 @@
 import * as bodyParser from "body-parser";
-import * as express from "express";
+import * as dotenv from "dotenv";
+dotenv.config();
+
 import { Request, Response } from "express";
+import * as express from "express";
 import { NextFunction } from "express-serve-static-core";
 import * as logger from "morgan";
 import "reflect-metadata";

@@ -22,7 +22,7 @@ export async function authAction(request: Request, response: Response) {
             return response.send(loginError);
           }
 
-          const token = JWT.sign(user, "MY_APP_JWT_SECRET");
+          const token = JWT.sign(user, process.env.JWT_SECRET);
           return response.json({ user, token });
         },
       );
