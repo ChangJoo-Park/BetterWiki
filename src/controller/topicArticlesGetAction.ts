@@ -3,7 +3,7 @@ import { Topic } from "../entity/Topic";
 
 export async function topicArticlesGetAction(request: Request, response: Response) {
   const topic = await Topic.findOne(request.params.id, {
-    relations: ["articles"],
+    relations: ["articles", "articles.user"],
   });
 
   response.send(topic);
