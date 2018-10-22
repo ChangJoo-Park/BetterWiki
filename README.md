@@ -26,6 +26,7 @@ inspired by MatterWiki
 - [x] Uncateogrize Articles when topic removed
 - [x] Add topic and article relation
 - [x] Add topic specific actions
+- [ ] Add Error handler
 - [ ] Import and Export
-- [ ] Check unique email and username
+- [x] Check unique email and username
 - [ ] and ... client.
