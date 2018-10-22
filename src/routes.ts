@@ -26,6 +26,7 @@ export const AppRoutes = [
         action: setupAction,
         method: "post",
         needAuth: false,
+        onlyAdmin: false,
         path: "/setup",
     },
     {
@@ -82,6 +83,7 @@ export const AppRoutes = [
         action: articleDeleteAllAction,
         method: "delete",
         needAuth: true,
+        onlyAdmin: true,
         path: "/articles",
     },
     {
