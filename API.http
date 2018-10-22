@@ -4,7 +4,7 @@ Content-Type: application/json
 Accept: application/json
 
 {
-  "email": "pcjpcj3@gmail.com",
+  "email": "pcjpcj2@gmail.com",
   "password": "password"
 }
 
@@ -107,11 +107,11 @@ GET http://localhost:3000/profile HTTP/1.1
 POST http://localhost:3000/users HTTP/1.1
 Content-Type: application/json
 Accept: application/json
-Authorization:bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5ODllNDhiLTNjNjktNGE2Yi04NzgzLTU5YzhkNWIxYzM5YyIsImVtYWlsIjoicGNqcGNqMkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImNoYW5nam9vLXBhcmsiLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDE4LTEwLTIxVDExOjU4OjI2LjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDE4LTEwLTIxVDExOjU4OjI2LjAwMFoiLCJpYXQiOjE1NDAyMTgwMTB9.Hh2kA-tcQe2TBryJTTDSgbuUcWd2rvusf6Nh_Gi2GMM
+Authorization:bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ1YjAxN2Q5LWVmMzAtNDNmZS05M2QyLWQ1ZTBlZmMwMjljNiIsImVtYWlsIjoicGNqcGNqMkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImNoYW5nam9vLXBhcmsiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE1NDAyMTk2MDF9.Gf8_MvETPT7Btmcbm5_rR3SA9MTBGeaDlUoeSKW0sPw
 
 {
-  "email": "pcjpcj3@gmail.com",
-  "username": "changjoo-park2",
+  "email": "pcjpcj2@gmail.com",
+  "username": "changjoo-park",
   "password": "password"
 }
 
