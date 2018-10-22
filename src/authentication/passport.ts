@@ -1,7 +1,9 @@
+import { compare } from "bcryptjs";
 import * as Passport from "passport";
 import { ExtractJwt, Strategy as JWTStrategy } from "passport-jwt";
 import { Strategy as LocalStrategy } from "passport-local";
 import { User } from "../entity/User";
+import { comparePassword } from "../utils/password";
 
 Passport.use(
   new LocalStrategy({
@@ -17,12 +19,24 @@ Passport.use(
       try {
         const user: User = await User.findOne({
           email,
-          passwordDigest: password,
-        });
+        }, {
+            select: ["id", "email", "username", "role", "passwordDigest"],
+          });
+
+        const compareResult = comparePassword(password, user.passwordDigest);
+
+        if (!compareResult) {
+          return cb(null, false, { message: "Incorrect email or password." });
+        }
+
         if (!user) {
           return cb(null, false, { message: "Incorrect email or password." });
         }
-        return cb(null, Object.assign({}, user), { message: "Logged In Successfully" });
+
+        const plainUser = Object.assign({}, user);
+        delete plainUser.passwordDigest;
+
+        return cb(null, plainUser, { message: "Logged In Successfully" });
       } catch (error) {
         cb(error);
       }

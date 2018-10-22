@@ -9,7 +9,7 @@ export async function authAction(request: Request, response: Response) {
     (err, user) => {
       if (err || !user) {
         return response.status(400).json({
-          message: "Something is not right",
+          message: "Incorrect email or password.",
           user,
         });
       }

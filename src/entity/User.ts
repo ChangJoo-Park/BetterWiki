@@ -1,6 +1,6 @@
-import { BaseEntity, Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
-import { articleCreateAction } from "../controller/articleCreateAction";
+import { BaseEntity, BeforeInsert, Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import { UserRole } from "../enum/UserRole";
+import { encryptPassword } from "../utils/password";
 import { Article } from "./Article";
 
 @Entity()
@@ -34,4 +34,9 @@ export class User extends BaseEntity {
 
   @UpdateDateColumn({ name: "updatedAt", precision: 3 })
   public readonly updatedAt?: Date;
+
+  @BeforeInsert()
+  public encrypt() {
+    this.passwordDigest = encryptPassword(this.passwordDigest);
+  }
 }
