@@ -17,13 +17,15 @@ inspired by MatterWiki
 - [ ] Authenticate with Facebook
 - [ ] Authenticate with Naver
 - [ ] Authenticate with Slack
+- [ ] Update User 
 - [x] Delete article only admin
 - [x] Create Members. only admin.
 - [x] Using dotenv for project environment.
-- [ ] Add bcrypt for password digest
+- [x] Add bcrypt for password digest
 - [x] Get Articles by user uuid
 - [x] Uncateogrize Articles when topic removed
 - [x] Add topic and article relation
 - [x] Add topic specific actions
 - [ ] Import and Export
+- [ ] Check unique email and username
 - [ ] and ... client.
