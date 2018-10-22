@@ -21,7 +21,7 @@ export class Article extends BaseEntity {
    * @param id Article Id
    * @returns  {Promise<Article>} Promise for fetching one Article
    */
-  public static findOneWithDetails(id) {
+  public static findOneWithDetails(id: number) {
     const select: any = ["title", "body", "createdAt", "updatedAt", "topic", "user"];
     const relations: any = ["topic", "user"];
 

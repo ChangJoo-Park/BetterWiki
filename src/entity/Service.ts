@@ -2,6 +2,11 @@ import { BaseEntity, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, U
 
 @Entity()
 export class Service extends BaseEntity {
+
+  /**
+   * Find Service Object.
+   * @returns  {Promise<Service>} Promise of Service Entity
+   */
   public static findOneWithDetails() {
     return Service.findOne({
       select: ["id", "name", "description", "logo", "createdAt", "updatedAt"],
