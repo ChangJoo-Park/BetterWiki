@@ -16,6 +16,7 @@ import { topicArticlesGetAction } from "./controller/topicArticlesGetAction";
 import { topicCreateAction } from "./controller/topicCreateAction";
 import { topicDeleteAction } from "./controller/topicDeleteAction";
 import { topicGetAllAction } from "./controller/topicGetAllAction";
+import { topicUpdateAction } from "./controller/topicUpdateAction";
 import { userGetAction } from "./controller/userGetAction";
 import { userGetAllAction } from "./controller/userGetAllAction";
 import { userSignUpAction } from "./controller/userSignUpAction";
@@ -125,6 +126,7 @@ export const AppRoutes = [
         needAuth: true,
         path: "/topics",
     },
+
     {
         action: topicArticlesGetAction,
         method: "get",
@@ -143,6 +145,12 @@ export const AppRoutes = [
         needAuth: true,
         onlyAdmin: true,
         path: "/topics",
+    },
+    {
+        action: topicUpdateAction,
+        method: "patch",
+        needAuth: true,
+        path: "/topics/:id",
     },
     {
         action: topicArticleConnectAction,
