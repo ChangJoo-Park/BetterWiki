@@ -1,5 +1,12 @@
 import {
-  BaseEntity, Column, CreateDateColumn, Entity, JoinTable, ManyToOne, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn,
+  BaseEntity,
+  Column,
+  CreateDateColumn,
+  Entity,
+  ManyToOne,
+  OneToMany,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
 } from "typeorm";
 import { Archive } from "./Archive";
 import { Topic } from "./Topic";
@@ -8,6 +15,12 @@ import { User } from "./User";
 @Entity()
 export class Article extends BaseEntity {
 
+  /**
+   * Find One Article by article id.
+   * It has all relations and all properties
+   * @param id Article Id
+   * @returns  {Promise<Article>} Promise for fetching one Article
+   */
   public static findOneWithDetails(id) {
     const select: any = ["title", "body", "createdAt", "updatedAt", "topic", "user"];
     const relations: any = ["topic", "user"];
