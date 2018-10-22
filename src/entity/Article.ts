@@ -18,14 +18,14 @@ export class Article extends BaseEntity {
   /**
    * Find One Article by article id.
    * It has all relations and all properties
-   * @param id Article Id
+   * @param {string} uuid Article Id
    * @returns  {Promise<Article>} Promise for fetching one Article
    */
-  public static findOneWithDetails(id: number) {
+  public static findOneWithDetails(uuid: string) {
     const select: any = ["title", "body", "createdAt", "updatedAt", "topic", "user"];
     const relations: any = ["topic", "user"];
 
-    return this.findOne(id, {
+    return this.findOne(uuid, {
       loadRelationIds: true,
       relations,
       select,
