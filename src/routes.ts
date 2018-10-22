@@ -20,6 +20,7 @@ import { topicUpdateAction } from "./controller/topicUpdateAction";
 import { userGetAction } from "./controller/userGetAction";
 import { userGetAllAction } from "./controller/userGetAllAction";
 import { userSignUpAction } from "./controller/userSignUpAction";
+import { HTTP } from "./enum/HTTP";
 
 /**
  * All application routes.
@@ -28,20 +29,20 @@ export const AppRoutes = [
     // Service
     {
         action: setupAction,
-        method: "post",
+        method: HTTP.POST,
         needAuth: false,
         onlyAdmin: false,
         path: "/setup",
     },
     {
         action: serviceGetAction,
-        method: "get",
+        method: HTTP.GET,
         needAuth: true,
         path: "/service",
     },
     {
         action: serviceUpdateAction,
-        method: "put",
+        method: HTTP.PUT,
         needAuth: true,
         onlyAdmin: true,
         path: "/setting",
@@ -49,118 +50,118 @@ export const AppRoutes = [
     // User and Authentication
     {
         action: authAction,
-        method: "post",
+        method: HTTP.POST,
         needAuth: false,
         path: "/login",
     },
     {
         action: userSignUpAction,
-        method: "post",
+        method: HTTP.POST,
         needAuth: true,
         path: "/users",
     },
     {
         action: userGetAction,
-        method: "get",
+        method: HTTP.GET,
         needAuth: true,
         path: "/users/:id",
     },
     {
         action: userGetAllAction,
-        method: "get",
+        method: HTTP.GET,
         needAuth: true,
         path: "/users",
     },
     {
         action: setupCheckAction,
-        method: "get",
+        method: HTTP.GET,
         needAuth: false,
         path: "/setup/check",
     },
     {
         action: meGetAction,
-        method: "get",
+        method: HTTP.GET,
         needAuth: true,
         path: "/me",
     },
     {
         action: articleDeleteAllAction,
-        method: "delete",
+        method: HTTP.DELETE,
         needAuth: true,
         onlyAdmin: true,
         path: "/articles",
     },
     {
         action: articleGetAllAction,
-        method: "get",
+        method: HTTP.GET,
         needAuth: true,
         path: "/articles",
     },
     {
         action: articleGetAction,
-        method: "get",
+        method: HTTP.GET,
         needAuth: true,
         path: "/articles/:id",
     },
     {
         action: articleHistoryGetAllAction,
-        method: "get",
+        method: HTTP.GET,
         needAuth: true,
         path: "/articles/:id/history",
     },
     {
         action: articleUpdateAction,
-        method: "patch",
+        method: HTTP.PATCH,
         needAuth: true,
         path: "/articles/:id",
     },
     {
         action: articleCreateAction,
-        method: "post",
+        method: HTTP.POST,
         needAuth: true,
         path: "/articles",
     },
     {
         action: topicGetAllAction,
-        method: "get",
+        method: HTTP.GET,
         needAuth: true,
         path: "/topics",
     },
 
     {
         action: topicArticlesGetAction,
-        method: "get",
+        method: HTTP.GET,
         needAuth: true,
         path: "/topics/:id/articles",
     },
     {
         action: topicCreateAction,
-        method: "post",
+        method: HTTP.POST,
         needAuth: true,
         path: "/topics",
     },
     {
         action: topicDeleteAction,
-        method: "delete",
+        method: HTTP.DELETE,
         needAuth: true,
         onlyAdmin: true,
         path: "/topics",
     },
     {
         action: topicUpdateAction,
-        method: "patch",
+        method: HTTP.PATCH,
         needAuth: true,
         path: "/topics/:id",
     },
     {
         action: topicArticleConnectAction,
-        method: "patch",
+        method: HTTP.PATCH,
         needAuth: true,
         path: "/topics/:topicId/articles/:articleId/connect",
     },
     {
         action: topicArticleDisconnectAction,
-        method: "delete",
+        method: HTTP.DELETE,
         needAuth: true,
         path: "/topics/:topicId/articles/:articleId/disconnect",
     },
