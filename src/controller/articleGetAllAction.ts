@@ -9,7 +9,7 @@ export async function articleGetAllAction(request: Request, response: Response) 
       createdAt: "DESC",
     },
     relations: ["user", "topic"],
-    select: ["title", "createdAt", "updatedAt", "user", "topic"],
+    select: ["id", "title", "createdAt", "updatedAt", "user", "topic"],
   });
   response.send(articles);
 }
