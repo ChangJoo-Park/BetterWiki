@@ -38,6 +38,9 @@ Passport.use(
     async (jwtPayload, cb) => {
       try {
         const user = await User.findOne(jwtPayload.id);
+        if (!user) {
+          throw new Error("User not found");
+        }
         cb(null, Object.assign({}, user));
       } catch (error) {
         cb(error);
