@@ -1,20 +1,21 @@
-import { BaseEntity, BeforeInsert, Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { BaseEntity, BeforeInsert, Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, Unique, UpdateDateColumn } from "typeorm";
 import { UserRole } from "../enum/UserRole";
 import { encryptPassword } from "../utils/password";
 import { Article } from "./Article";
 
 @Entity()
+@Unique("UNIQUE_ACCOUNT", ["email", "username"])
 export class User extends BaseEntity {
   @PrimaryGeneratedColumn("uuid")
   public id: string;
 
-  @Column()
+  @Column({ unique: true })
   public email: string;
 
   @Column({ select: false })
   public passwordDigest: string;
 
-  @Column()
+  @Column({ unique: true })
   public username: string;
 
   @Column({ select: false, default: "" })
