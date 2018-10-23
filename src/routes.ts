@@ -20,6 +20,7 @@ import { topicUpdateAction } from "./controller/topicUpdateAction";
 import { userGetAction } from "./controller/userGetAction";
 import { userGetAllAction } from "./controller/userGetAllAction";
 import { userSignUpAction } from "./controller/userSignUpAction";
+import { userUpdateAction } from "./controller/userUpdateAction";
 import { HTTP } from "./enum/HTTP";
 
 /**
@@ -63,6 +64,12 @@ export const AppRoutes = [
     {
         action: userGetAction,
         method: HTTP.GET,
+        needAuth: true,
+        path: "/users/:id",
+    },
+    {
+        action: userUpdateAction,
+        method: HTTP.PATCH,
         needAuth: true,
         path: "/users/:id",
     },

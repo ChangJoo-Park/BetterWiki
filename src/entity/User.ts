@@ -1,4 +1,4 @@
-import { BaseEntity, BeforeInsert, Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, Unique, UpdateDateColumn } from "typeorm";
+import { BaseEntity, BeforeInsert, BeforeUpdate, Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, Unique, UpdateDateColumn } from "typeorm";
 import { UserRole } from "../enum/UserRole";
 import { encryptPassword } from "../utils/password";
 import { Article } from "./Article";
@@ -37,7 +37,9 @@ export class User extends BaseEntity {
   public readonly updatedAt?: Date;
 
   @BeforeInsert()
+  @BeforeUpdate()
   public encrypt() {
     this.passwordDigest = encryptPassword(this.passwordDigest);
   }
+
 }
