@@ -17,7 +17,7 @@ inspired by MatterWiki
 - [ ] Authenticate with Facebook
 - [ ] Authenticate with Naver
 - [ ] Authenticate with Slack
-- [ ] Update User 
+- [x] Update User 
 - [x] Delete article only admin
 - [x] Create Members. only admin.
 - [x] Using dotenv for project environment.
@@ -26,7 +26,7 @@ inspired by MatterWiki
 - [x] Uncateogrize Articles when topic removed
 - [x] Add topic and article relation
 - [x] Add topic specific actions
-- [ ] Add Error handler
+- [x] Add Error handler
 - [ ] Import and Export
 - [x] Check unique email and username
 - [ ] and ... client.
