@@ -1,4 +1,3 @@
-import { compare } from "bcryptjs";
 import * as Passport from "passport";
 import { ExtractJwt, Strategy as JWTStrategy } from "passport-jwt";
 import { Strategy as LocalStrategy } from "passport-local";
