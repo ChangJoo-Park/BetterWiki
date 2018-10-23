@@ -1,11 +1,12 @@
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
-  collectCoverage : true,
+  collectCoverage: true,
   collectCoverageFrom: [
     "**/*.{ts,tsx}",
     "!**/node_modules/**",
     "!**/vendor/**",
-    "!**/server.ts"
+    "!**/server.ts",
+    "!**/migration/**/*.ts"
   ]
 };
