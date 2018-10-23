@@ -1,12 +1,13 @@
 import { Request, Response } from "express";
 import { User } from "../entity/User";
+import { UserRole } from "../enum/UserRole";
 
 export async function userUpdateAction(request: Request, response: Response) {
   const body = request.body;
   delete body.email;
   delete body.username;
 
-  if (request.user.role !== "admin") {
+  if (request.user.role !== "admin" || !(body.role in UserRole)) {
     delete body.role;
   }
 
