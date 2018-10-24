@@ -3,6 +3,13 @@
   "database": "database.sqlite",
   "synchronize": false,
   "logging": true,
+  "cache": {
+    "type": "redis",
+    "options": {
+      "host": "localhost",
+      "port": 6379
+    }
+  },
   "entities": [
     "dist/entity/*.js"
   ],

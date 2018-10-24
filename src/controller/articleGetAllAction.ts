@@ -3,6 +3,10 @@ import { Article } from "../entity/Article";
 
 export async function articleGetAllAction(request: Request, response: Response) {
   const articles = await Article.find({
+    cache: {
+      id: "get_all_articles",
+      milliseconds: 5000,
+    },
     loadEagerRelations: true,
     loadRelationIds: true,
     order: {
