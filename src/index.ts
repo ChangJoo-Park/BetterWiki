@@ -22,7 +22,7 @@ createConnection().then(async (connection) => {
         if (route.needAuth) {
             if (route.onlyAdmin) {
                 app[route.method](
-                    route.path,
+                    `/api${route.path}`,
                     passport.authenticate("jwt", { session: false }),
                     onlyAdmin,
                     (request: Request, response: Response, next: NextFunction) => {
@@ -31,7 +31,7 @@ createConnection().then(async (connection) => {
                 );
             } else {
                 app[route.method](
-                    route.path,
+                    `/api${route.path}`,
                     passport.authenticate("jwt", { session: false }),
                     (request: Request, response: Response, next: NextFunction) => {
                         return route.action(request, response).catch((error) => next(error));
@@ -40,7 +40,7 @@ createConnection().then(async (connection) => {
             }
         } else {
             app[route.method](
-                route.path,
+                `/api${route.path}`,
                 (request: Request, response: Response, next: NextFunction) => {
                     return route.action(request, response).catch((error) => next(error));
                 },
