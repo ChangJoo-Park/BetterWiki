@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import * as JWT from "jsonwebtoken";
 import * as Passport from "passport";
+import { Service } from "../entity/Service";
 
 export async function authAction(request: Request, response: Response) {
   Passport.authenticate(
@@ -17,13 +18,14 @@ export async function authAction(request: Request, response: Response) {
       request.login(
         user,
         { session: false },
-        (loginError) => {
+        async (loginError) => {
           if (loginError) {
             return response.send(loginError);
           }
 
           const token = JWT.sign(user, process.env.JWT_SECRET);
-          return response.json({ user, token });
+          const service = await Service.findOneWithDetails();
+          return response.json({ user, service, token });
         },
       );
     },
