@@ -10,7 +10,7 @@ Accept: application/json
 
 ###
 GET http://localhost:3000/articles HTTP/1.1
-Authorization:bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5ODllNDhiLTNjNjktNGE2Yi04NzgzLTU5YzhkNWIxYzM5YyIsImVtYWlsIjoicGNqcGNqMkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImNoYW5nam9vLXBhcmsiLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDE4LTEwLTIxVDExOjU4OjI2LjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDE4LTEwLTIxVDExOjU4OjI2LjAwMFoiLCJpYXQiOjE1NDAyMTE4OTN9.qNi1XM2Igzs_KcNyyMtfj45_bXgfHA4v0xB5D2blxWI
+Authorization:bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ1YjAxN2Q5LWVmMzAtNDNmZS05M2QyLWQ1ZTBlZmMwMjljNiIsImVtYWlsIjoicGNqcGNqMkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImNoYW5nam9vLXBhcmsiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE1NDAzODYwNzF9.VOrs7luvV4EB13-M6W2caC_r2uVmVQip-73vJqRLOsk
 Content-Type: application/json
 Accept: application/json
 
@@ -22,15 +22,15 @@ Accept: application/json
 
 
 ###
-POST http://localhost:3000/articles HTTP/1.1
-Authorization:bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5ODllNDhiLTNjNjktNGE2Yi04NzgzLTU5YzhkNWIxYzM5YyIsImVtYWlsIjoicGNqcGNqMkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImNoYW5nam9vLXBhcmsiLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDE4LTEwLTIxVDExOjU4OjI2LjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDE4LTEwLTIxVDExOjU4OjI2LjAwMFoiLCJpYXQiOjE1NDAxMjg1MDV9.E4-l3YcLeSq3DWIbJGxSAxMu1STnw-T8WhXE2Pi72j8
+POST http://localhost:3000/api/articles HTTP/1.1
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMzMzkzYmYxLTE4N2YtNDRmNy05Y2JlLTdkY2Q3Yzg3YzU1MCIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20iLCJ1c2VybmFtZSI6IkFkbWluaXN0cmF0b3IiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE1NDA2NDQwNzd9.KBsILlZ07bI4jdc9LadJieXmgdcB5VNgByvuAwc-sgo
 Content-Type: application/json
 Accept: application/json
 
 {
   "title": "Microsoft",
   "body": "testing",
-  "topicId": "42397897-942e-4aa0-8c5e-55fb7dc0d5e6"
+  "topicId": "9517936f-c4f6-4f8b-b4f3-6f11ce76f4b4"
 }
 
 ###
@@ -110,14 +110,14 @@ Accept: application/json
 Authorization:bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ1YjAxN2Q5LWVmMzAtNDNmZS05M2QyLWQ1ZTBlZmMwMjljNiIsImVtYWlsIjoicGNqcGNqMkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImNoYW5nam9vLXBhcmsiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE1NDAyMTk2MDF9.Gf8_MvETPT7Btmcbm5_rR3SA9MTBGeaDlUoeSKW0sPw
 
 {
-  "email": "pcjpcj2@gmail.com",
-  "username": "changjoo-park",
+  "email": "pcjpcj4@gmail.com",
+  "username": "changjoo-park4",
   "password": "password"
 }
 
 ###
 GET http://localhost:3000/me HTTP/1.1
-Authorization:bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5ODllNDhiLTNjNjktNGE2Yi04NzgzLTU5YzhkNWIxYzM5YyIsImVtYWlsIjoicGNqcGNqMkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImNoYW5nam9vLXBhcmsiLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDE4LTEwLTIxVDExOjU4OjI2LjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDE4LTEwLTIxVDExOjU4OjI2LjAwMFoiLCJpYXQiOjE1NDAyMTE0MDd9.bvsSfp6CHKnDewvsTUv6iJBueOnLiQo4TI3Bwm3OmVw
+Authorization:bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ1YjAxN2Q5LWVmMzAtNDNmZS05M2QyLWQ1ZTBlZmMwMjljNiIsImVtYWlsIjoicGNqcGNqMkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImNoYW5nam9vLXBhcmsiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE1NDAyOTc0OTl9.9bCk_p4va8j0i_XkVUrcDT49r370Bh97g1iGRGs9txo
 
 
 ###
@@ -150,7 +150,7 @@ Authorization:bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5ODllNDhiLT
 
 ###
 GET http://localhost:3000/users HTTP/1.1
-Authorization:bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5ODllNDhiLTNjNjktNGE2Yi04NzgzLTU5YzhkNWIxYzM5YyIsImVtYWlsIjoicGNqcGNqMkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImNoYW5nam9vLXBhcmsiLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDE4LTEwLTIxVDExOjU4OjI2LjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDE4LTEwLTIxVDExOjU4OjI2LjAwMFoiLCJpYXQiOjE1NDAxMjg1MDV9.E4-l3YcLeSq3DWIbJGxSAxMu1STnw-T8WhXE2Pi72j8
+Authorization:bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ1YjAxN2Q5LWVmMzAtNDNmZS05M2QyLWQ1ZTBlZmMwMjljNiIsImVtYWlsIjoicGNqcGNqMkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImNoYW5nam9vLXBhcmsiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE1NDAyOTYzMDh9.r21r9jvKStYu0feKT0UPppXrPX1WPLsOKqvBManN1hc
 Content-Type: application/json
 Accept: application/json
 
@@ -172,3 +172,16 @@ DELETE http://localhost:3000/topics/c014fd2d-65ce-414c-b419-043f2337237b/article
 Authorization:bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5ODllNDhiLTNjNjktNGE2Yi04NzgzLTU5YzhkNWIxYzM5YyIsImVtYWlsIjoicGNqcGNqMkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImNoYW5nam9vLXBhcmsiLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDE4LTEwLTIxVDExOjU4OjI2LjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDE4LTEwLTIxVDExOjU4OjI2LjAwMFoiLCJpYXQiOjE1NDAxMjg1MDV9.E4-l3YcLeSq3DWIbJGxSAxMu1STnw-T8WhXE2Pi72j8
 Content-Type: application/json
 Accept: application/json
+
+
+###
+PATCH http://localhost:3000/users/b0a306cc-90dd-471f-8d56-a1f7d9c6e1de HTTP/1.1
+Authorization:bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ1YjAxN2Q5LWVmMzAtNDNmZS05M2QyLWQ1ZTBlZmMwMjljNiIsImVtYWlsIjoicGNqcGNqMkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImNoYW5nam9vLXBhcmsiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE1NDAyOTYzMDh9.r21r9jvKStYu0feKT0UPppXrPX1WPLsOKqvBManN1hc
+Content-Type: application/json
+Accept: application/json
+
+{
+  "about": "Hello World",
+  "avatar": "http://www.gravatar.com/avatar/73543542128f5a067ffc34305eefe48a",
+  "role": "asdf"
+}
