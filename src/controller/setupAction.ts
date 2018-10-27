@@ -10,9 +10,9 @@ import { UserRole } from "../enum/UserRole";
  * @param response
  */
 export async function setupAction(request: Request, response: Response) {
-  const { user, service } = request.body;
+  const { admin, service } = request.body;
 
-  const { email, password, username } = user;
+  const { email, password, username } = admin;
   const newUser = User.create({
     email,
     passwordDigest: password,
