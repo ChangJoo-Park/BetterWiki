@@ -14,7 +14,7 @@ export async function articleCreateAction(request: Request, response: Response) 
     if (existsTopic) {
         newArticle.topic = existsTopic
     } else {
-        const newTopic = await Topic.create({ name: topic })
+        const newTopic = await Topic.create({ name: topic, description: '' })
         const savedTopic = await Topic.save(newTopic)
         newArticle.topic = savedTopic
     }
